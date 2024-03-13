@@ -288,30 +288,14 @@
                                 <i class="mdi mdi-account-circle me-1"></i>
                                 <span>My Account</span>
                             </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-account-edit me-1"></i>
-                                <span>Settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-lifebuoy me-1"></i>
-                                <span>Support</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-lock-outline me-1"></i>
-                                <span>Lock Screen</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <a onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" href="javascript:void(0);" class="dropdown-item notify-item">
                                 <i class="mdi mdi-logout me-1"></i>
                                 <span>Logout</span>
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </li>
 

@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function (){
     Route::get('/',[DashboardController::class,'index'] )->name('landing');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::prefix('user-group')->name('user-group.')->group(function (){
-        Route::get('/',[UserGroupController::class,'index'])->name('index')->middleware('permission:user_groups.read');
+        Route::get('/',[UserGroupController::class,'index'])->name('index')->middleware('permission:user_groups.index');
         Route::get('create',[UserGroupController::class,'create'])->name('create')->middleware('permission:user_groups.create');
         Route::post('create',[UserGroupController::class,'store'])->name('store');
         Route::get('edit/{id}',[UserGroupController::class,'edit'])->name('edit')->middleware('permission:user_groups.edit');
@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function (){
         Route::put('access/{id}',[UserGroupController::class,'accessUpdate'])->name('access');
     });
     Route::prefix('profile')->name('profile.')->group(function (){
-        Route::get('/',[ProfileController::class,'index'])->name('index');
+        Route::get('/',[ProfileController::class,'index'])->name('index')->middleware('permission:profile.index');
     });
 });
 Route::fallback(function () {

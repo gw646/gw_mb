@@ -40,6 +40,15 @@ class PermissionSeeder extends Seeder
                         'Access'
                     ],
                 ]
+            ],
+            [
+                'groupName'=>'User Profiles',
+                'permission'=>[
+                    [
+                        'profile.index',
+                        'Read'
+                    ],
+                ]
             ]
         ];
         for ($i = 0; $i < count($permissions); $i ++){

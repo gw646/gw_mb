@@ -32,7 +32,7 @@
                     <span> Stuff Panel </span>
                 </a>
             </li>
-            @can('user_groups.read')
+            @can('user_groups.index')
             <li class="side-nav-item">
                 <a href="{{route('user-group.index')}}" class="side-nav-link ">
                     <i class="fas fa-users"></i>
@@ -46,12 +46,14 @@
                     <span>Online Payment System</span>
                 </a>
             </li>
+            @can('profile.index')
             <li class="side-nav-item">
                 <a href="{{route('profile.index')}}" class="side-nav-link ">
                     <i class="fas fa-id-card"></i>
                     <span>User Profiles</span>
                 </a>
             </li>
+            @endcan
             <li class="side-nav-item">
                 <a href="javascript:void(0);" class="side-nav-link ">
                     <i class="fas fa-list-ul"></i>

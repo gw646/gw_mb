@@ -25,7 +25,6 @@
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="col">Guard</th>
                                 <th scope="col">Users</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Action</th>
@@ -35,7 +34,6 @@
                             @forelse($roles as $role)
                                 <tr>
                                     <td >{{$role->name}}</td>
-                                    <td>{{$role->guard_name}}</td>
                                     <td>{{$role->users_count}}</td>
                                     <td>{{adminDateTime($role->created_at)}}</td>
                                     <td class="table-action">

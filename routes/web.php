@@ -23,9 +23,10 @@ Route::middleware('auth')->group(function (){
     Route::prefix('user-group')->name('user-group.')->group(function (){
         Route::get('/',[UserGroupController::class,'index'])->name('index');
         Route::get('create',[UserGroupController::class,'create'])->name('create');
-        Route::get('edit/{id}')->name('edit');
-        Route::delete('delete')->name('delete');
-
+        Route::post('create',[UserGroupController::class,'store'])->name('store');
+        Route::get('edit/{id}',[UserGroupController::class,'edit'])->name('edit');
+        Route::put('update/{id}',[UserGroupController::class,'update'])->name('update');
+        Route::delete('delete',[UserGroupController::class,'delete'])->name('delete');
         Route::get('access/{id}')->name('access');
         Route::post('access/{id}')->name('access');
 

@@ -1,5 +1,6 @@
 <?php
 use Spatie\Permission\Models\Permission;
+use Carbon\Carbon;
 function getAdminPermissionGroupBy(){
     $permissionGroup  = Permission::select('group_name')
         ->orderBy('created_at','ASC')
@@ -24,4 +25,7 @@ function getRoleDropdown($selected = 0){
 function getUserRoleName()
 {
     return auth()->user()->roles[0]->name;
+}
+function adminDateTime($data){
+    return Carbon::parse($data)->format('d-m-Y h:i:s');
 }

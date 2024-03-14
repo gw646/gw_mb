@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\DashboardController;
 use \App\Http\Controllers\Admin\UserGroupController;
+use \App\Http\Controllers\Admin\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,9 @@ Route::middleware('auth')->group(function (){
         Route::delete('delete',[UserGroupController::class,'delete'])->name('delete')->middleware('permission:user_groups.delete');
         Route::get('access/{id}',[UserGroupController::class,'access'])->name('access')->middleware('permission:user_groups.access');
         Route::put('access/{id}',[UserGroupController::class,'accessUpdate'])->name('access');
+    });
+    Route::prefix('profile')->name('profile.')->group(function (){
+        Route::get('/',[ProfileController::class,'index'])->name('index');
     });
 });
 Route::fallback(function () {

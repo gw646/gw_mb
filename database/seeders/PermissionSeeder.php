@@ -16,7 +16,7 @@ class PermissionSeeder extends Seeder
                 'groupName'=>'User Groups',
                 'permission'=>[
                     [
-                        'user_groups.read',
+                        'user_groups.index',
                         'Read'
                     ],
                     [
@@ -64,6 +64,78 @@ class PermissionSeeder extends Seeder
                 'permission'=>[
                     [
                         'online-payment-system.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Sub Committees',
+                'permission'=>[
+                    [
+                        'sub-committees.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'All Members',
+                'permission'=>[
+                    [
+                        'all-members.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Polls And Surveys',
+                'permission'=>[
+                    [
+                        'polls-and-survey.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Articles',
+                'permission'=>[
+                    [
+                        'articles.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Calendar Of Events',
+                'permission'=>[
+                    [
+                        'calendar-of-events.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Messages',
+                'permission'=>[
+                    [
+                        'messages.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'CME Management',
+                'permission'=>[
+                    [
+                        'cme-management.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Settings',
+                'permission'=>[
+                    [
+                        'settings.index',
                         'Read'
                     ],
                 ]

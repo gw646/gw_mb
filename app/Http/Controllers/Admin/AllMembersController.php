@@ -8,6 +8,6 @@ class AllMembersController extends Controller
 {
     public function index()
     {
-
+        return view('admin.all-members.index');
     }
 }

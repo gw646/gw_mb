@@ -8,7 +8,7 @@ use \App\Http\Controllers\Admin\StuffPanelController;
 use \App\Http\Controllers\Admin\OnlinePaymentSystemController;
 use \App\Http\Controllers\Admin\SubCommitteesController;
 use \App\Http\Controllers\Admin\AllMembersController;
-use \App\Http\Controllers\Admin\PollsAndServeryController;
+use \App\Http\Controllers\Admin\PollsAndSurveyController;
 use \App\Http\Controllers\Admin\ArticleController;
 use \App\Http\Controllers\Admin\CalendarOfEventsController;
 use \App\Http\Controllers\Admin\MessageController;
@@ -52,28 +52,28 @@ Route::middleware('auth')->group(function (){
         Route::get('/',[ProfileController::class,'index'])->name('index')->middleware('permission:profile.index');
     });
     Route::prefix('sub-committees')->name('sub-committees.')->group(function (){
-        Route::get('/',[SubCommitteesController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[SubCommitteesController::class,'index'])->name('index')->middleware('permission:sub-committees.index');
     });
     Route::prefix('all-members')->name('all-members.')->group(function (){
-        Route::get('/',[AllMembersController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[AllMembersController::class,'index'])->name('index')->middleware('permission:all-members.index');
     });
-    Route::prefix('polls-and-servery')->name('polls-and-servery.')->group(function (){
-        Route::get('/',[PollsAndServeryController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+    Route::prefix('polls-and-survey')->name('polls-and-survey.')->group(function (){
+        Route::get('/',[PollsAndSurveyController::class,'index'])->name('index')->middleware('permission:polls-and-survey.index');
     });
     Route::prefix('articles')->name('articles.')->group(function (){
-        Route::get('/',[ArticleController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[ArticleController::class,'index'])->name('index')->middleware('permission:articles.index');
     });
     Route::prefix('calendar-of-events')->name('calendar-of-events.')->group(function (){
-        Route::get('/',[CalendarOfEventsController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[CalendarOfEventsController::class,'index'])->name('index')->middleware('permission:calendar-of-events.index');
     });
     Route::prefix('messages')->name('messages.')->group(function (){
-        Route::get('/',[MessageController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[MessageController::class,'index'])->name('index')->middleware('permission:messages.index');
     });
     Route::prefix('cme-management')->name('cme-management.')->group(function (){
-        Route::get('/',[CmeManagementController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[CmeManagementController::class,'index'])->name('index')->middleware('permission:cme-management.index');
     });
     Route::prefix('settings')->name('settings.')->group(function (){
-        Route::get('/',[SettingController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[SettingController::class,'index'])->name('index')->middleware('permission:settings.index');
     });
 });
 Route::fallback(function () {

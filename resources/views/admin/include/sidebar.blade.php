@@ -58,54 +58,70 @@
                 </a>
             </li>
             @endcan
+            @can('sub-committees.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('sub-committees.index')}}" class="side-nav-link ">
                     <i class="fas fa-list-ul"></i>
                     <span>Sub Committees</span>
                 </a>
             </li>
+            @endcan
+            @can('all-members.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('all-members.index')}}" class="side-nav-link ">
                     <i class="fas fa-user-plus"></i>
                     <span>All Members</span>
                 </a>
             </li>
+            @endcan
+            @can('polls-and-survey.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('polls-and-survey.index')}}" class="side-nav-link ">
                     <i class="fas fa-poll"></i>
                     <span>Polls and Surveys</span>
                 </a>
             </li>
+            @endcan
+            @can('articles.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('articles.index')}}" class="side-nav-link ">
                     <i class="fas fa-newspaper"></i>
                     <span>Articles</span>
                 </a>
             </li>
+            @endcan
+            @can('calendar-of-events.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('calendar-of-events.index')}}" class="side-nav-link ">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendar of Events</span>
                 </a>
             </li>
+            @endcan
+            @can('messages.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('messages.index')}}" class="side-nav-link ">
                     <i class="fas fa-envelope"></i>
                     <span>Messages</span>
                 </a>
             </li>
+            @endcan
+            @can('cme-management.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('cme-management.index')}}" class="side-nav-link ">
                     <i class="fas fa-book-medical"></i>
                     <span>CME Management</span>
                 </a>
-            </li><li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+            </li>
+            @endcan
+            @can('settings.index')
+            <li class="side-nav-item">
+                <a href="{{route('settings.index')}}" class="side-nav-link ">
                     <i class="fas fa-cogs"></i>
                     <span>Settings</span>
                 </a>
             </li>
-
+            @endcan
         </ul>
         <div class="clearfix"></div>
 

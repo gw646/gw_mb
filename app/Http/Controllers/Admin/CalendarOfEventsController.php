@@ -8,6 +8,6 @@ class CalendarOfEventsController extends Controller
 {
     public function index()
     {
-
+        return view('admin.calendar-of-events.index');
     }
 }

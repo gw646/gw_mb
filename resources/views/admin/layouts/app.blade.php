@@ -5,9 +5,13 @@
     <title>@yield('title') | {{env('APP_NAME')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
+    @stack('style-library')
     <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="app-style"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    @stack('style')
 </head>
 
 <body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid"
@@ -323,23 +327,12 @@
                 </div>
             </div>
         </footer>
-        <!-- end Footer -->
-
     </div>
-
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
-
 </div>
-<!-- END wrapper -->
 
-
-<div class="rightbar-overlay"></div>
 <script src="{{asset('assets/js/vendor.min.js')}}"></script>
 <script src="{{asset('assets/js/app.min.js')}}"></script>
-
+@stack('script-library')
+@stack('script')
 </body>
-
 </html>

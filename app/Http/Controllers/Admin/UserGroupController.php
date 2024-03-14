@@ -14,7 +14,6 @@ class UserGroupController extends Controller
     {
         $roles = Role::withCount('users')
             ->withCount('permissions')
-            ->orderBy('id','DESC')
             ->get();
         return view('admin.user-group.index')->with([
             'roles'=>$roles
@@ -83,7 +82,7 @@ class UserGroupController extends Controller
             toast('Group not found','error');
             return redirect()->back();
         }
-        $permissions = Permission::all();
+        $permissions = Permission::orderBy('id','ASC')->get();
         $permissionGroups = getAdminPermissionGroupBy();
         return view('admin.user-group.access')
             ->with([

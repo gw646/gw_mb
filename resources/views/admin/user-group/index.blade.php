@@ -17,9 +17,11 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                @can('user_groups.create')
                 <div class="card-header text-end">
                     <a href="{{route('user-group.create')}}" class="btn btn-success btn-sm"><i class="fa fa-plus fa-fw"></i>Add New</a>
                 </div>
+                @endcan
                 <div class="card-body">
                     <table class="table table-bordered table-nowrap table-hover table-centered mb-0">
                         <thead>
@@ -39,17 +41,23 @@
                                     <td>{{$role->permissions_count}}</td>
                                     <td>{{adminDateTime($role->created_at)}}</td>
                                     <td class="table-action">
-                                        <a href="{{route('user-group.access',['id'=>$role->id])}}" class="action-icon"><i class="mdi mdi-cog"></i></a>
-                                        <a href="{{route('user-group.edit',['id'=>$role->id])}}" class="action-icon edit"><i class="mdi mdi-square-edit-outline"></i></a>
-                                        @if($role->is_default == '0')
-                                            <form id="delete-{{$role->id}}" class="d-none" action="{{route('user-group.delete')}}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <input type="hidden" name="id" value="{{$role->id}}">
-                                            </form>
-                                            <a href="#" onclick="deleteCall('{{$role->id}}')" class="action-icon"><i class="mdi mdi-delete"></i>
-                                            </a>
-                                        @endif
+                                        @can('user_groups.access')
+                                            <a href="{{route('user-group.access',['id'=>$role->id])}}" class="action-icon"><i class="mdi mdi-cog"></i></a>
+                                        @endcan
+                                        @can('user_groups.update')
+                                            <a href="{{route('user-group.edit',['id'=>$role->id])}}" class="action-icon edit"><i class="mdi mdi-square-edit-outline"></i></a>
+                                        @endcan
+                                        @can('user_groups.delete')
+                                            @if($role->is_default == '0')
+                                                <form id="delete-{{$role->id}}" class="d-none" action="{{route('user-group.delete')}}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <input type="hidden" name="id" value="{{$role->id}}">
+                                                </form>
+                                                <a href="#" onclick="deleteCall('{{$role->id}}')" class="action-icon"><i class="mdi mdi-delete"></i>
+                                                </a>
+                                            @endif
+                                        @endcan
                                     </td>
                                 </tr>
                             @empty

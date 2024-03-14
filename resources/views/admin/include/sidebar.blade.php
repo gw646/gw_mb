@@ -32,12 +32,14 @@
                     <span> Stuff Panel </span>
                 </a>
             </li>
+            @can('user_groups.read')
             <li class="side-nav-item">
                 <a href="{{route('user-group.index')}}" class="side-nav-link ">
                     <i class="fas fa-users"></i>
                     <span>Users Groups</span>
                 </a>
             </li>
+            @endcan
             <li class="side-nav-item">
                 <a href="javascript:void(0);" class="side-nav-link ">
                     <i class="fas fa-credit-card"></i>

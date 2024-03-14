@@ -21,13 +21,13 @@ Route::middleware('auth')->group(function (){
     Route::get('/',[DashboardController::class,'index'] )->name('landing');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::prefix('user-group')->name('user-group.')->group(function (){
-        Route::get('/',[UserGroupController::class,'index'])->name('index');
-        Route::get('create',[UserGroupController::class,'create'])->name('create');
+        Route::get('/',[UserGroupController::class,'index'])->name('index')->middleware('permission:user_groups.read');
+        Route::get('create',[UserGroupController::class,'create'])->name('create')->middleware('permission:user_groups.create');
         Route::post('create',[UserGroupController::class,'store'])->name('store');
-        Route::get('edit/{id}',[UserGroupController::class,'edit'])->name('edit');
+        Route::get('edit/{id}',[UserGroupController::class,'edit'])->name('edit')->middleware('permission:user_groups.edit');
         Route::put('update/{id}',[UserGroupController::class,'update'])->name('update');
-        Route::delete('delete',[UserGroupController::class,'delete'])->name('delete');
-        Route::get('access/{id}',[UserGroupController::class,'access'])->name('access');
+        Route::delete('delete',[UserGroupController::class,'delete'])->name('delete')->middleware('permission:user_groups.delete');
+        Route::get('access/{id}',[UserGroupController::class,'access'])->name('access')->middleware('permission:user_groups.access');
         Route::put('access/{id}',[UserGroupController::class,'accessUpdate'])->name('access');
 
     });

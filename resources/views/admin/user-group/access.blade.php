@@ -23,7 +23,7 @@
                         <div class="form-check">
                             <input  type="checkbox" class="form-check-input checkedAll" />
                             <label class="form-check-label">
-                                Mark All Access Key - for <strong>{{$role->name}}</strong> Group
+                                Mark All Access Key - for <strong class="text-success">{{$role->name}}</strong> Group
                             </label>
                         </div>
                     </div>

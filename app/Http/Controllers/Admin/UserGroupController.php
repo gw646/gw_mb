@@ -12,7 +12,10 @@ class UserGroupController extends Controller
 {
     public function index()
     {
-        $roles = Role::withCount('users')->orderBy('id','DESC')->get();
+        $roles = Role::withCount('users')
+            ->withCount('permissions')
+            ->orderBy('id','DESC')
+            ->get();
         return view('admin.user-group.index')->with([
             'roles'=>$roles
         ]);
@@ -88,5 +91,18 @@ class UserGroupController extends Controller
                 'permissions'=>$permissions,
                 'permissionGroups'=>$permissionGroups
             ]);
+    }
+
+    public function accessUpdate($id,Request $request)
+    {
+        $role =  Role::findOrFail($id);
+        if (!empty($request->permission)){
+            $permissions = Permission::whereIn('id',$request->permission)->get();
+            $role->syncPermissions($permissions);
+        }else{
+            $role->syncPermissions([]);
+        }
+        toast('Permission assign successfully','success');
+        return redirect()->back();
     }
 }

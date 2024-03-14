@@ -25,7 +25,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
-                                <th scope="col">Users</th>
+                                <th scope="col">Total Users</th>
+                                <th scope="col">Total Permissions</th>
                                 <th scope="col">Created</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -35,6 +36,7 @@
                                 <tr>
                                     <td >{{$role->name}}</td>
                                     <td>{{$role->users_count}}</td>
+                                    <td>{{$role->permissions_count}}</td>
                                     <td>{{adminDateTime($role->created_at)}}</td>
                                     <td class="table-action">
                                         <a href="{{route('user-group.access',['id'=>$role->id])}}" class="action-icon"><i class="mdi mdi-cog"></i></a>

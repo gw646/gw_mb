@@ -14,4 +14,9 @@ class UserGroupController extends Controller
             'roles'=>$roles
         ]);
     }
+
+    public function create()
+    {
+        return view('admin.user-group.create');
+    }
 }

@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function (){
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::prefix('user-group')->name('user-group.')->group(function (){
         Route::get('/',[UserGroupController::class,'index'])->name('index');
+        Route::get('create',[UserGroupController::class,'create'])->name('create');
         Route::get('edit/{id}')->name('edit');
         Route::delete('delete')->name('delete');
 

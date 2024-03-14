@@ -17,6 +17,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                <div class="card-header text-end">
+                    <a href="{{route('user-group.create')}}" class="btn btn-success btn-sm"><i class="fa fa-plus fa-fw"></i>Add New</a>
+                </div>
                 <div class="card-body">
                     <table class="table table-bordered table-nowrap table-hover table-centered mb-0">
                         <thead>

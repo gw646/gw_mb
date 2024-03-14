@@ -45,7 +45,7 @@ Route::middleware('auth')->group(function (){
         Route::put('access/{id}',[UserGroupController::class,'accessUpdate'])->name('access');
     });
     Route::prefix('online-payment-system')->name('online-payment-system.')->group(function (){
-        Route::get('/',[OnlinePaymentSystemController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+        Route::get('/',[OnlinePaymentSystemController::class,'index'])->name('index')->middleware('permission:online-payment-system.index');
     });
 
     Route::prefix('profile')->name('profile.')->group(function (){

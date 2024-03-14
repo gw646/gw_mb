@@ -49,6 +49,24 @@ class PermissionSeeder extends Seeder
                         'Read'
                     ],
                 ]
+            ],
+            [
+                'groupName'=>'Stuff panel',
+                'permission'=>[
+                    [
+                        'stuff-panel.index',
+                        'Read'
+                    ],
+                ]
+            ],
+            [
+                'groupName'=>'Online Payment System',
+                'permission'=>[
+                    [
+                        'online-payment-system.index',
+                        'Read'
+                    ],
+                ]
             ]
         ];
         for ($i = 0; $i < count($permissions); $i ++){

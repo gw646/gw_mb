@@ -26,12 +26,14 @@
                     <span> Dashboard </span>
                 </a>
             </li>
+            @can('stuff-panel.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('stuff-panel.index')}}" class="side-nav-link ">
                     <i class="fas fa-user-cog"></i>
                     <span> Stuff Panel </span>
                 </a>
             </li>
+            @endcan
             @can('user_groups.index')
             <li class="side-nav-item">
                 <a href="{{route('user-group.index')}}" class="side-nav-link ">
@@ -40,12 +42,14 @@
                 </a>
             </li>
             @endcan
+            @can('online-payment-system.index')
             <li class="side-nav-item">
-                <a href="javascript:void(0);" class="side-nav-link ">
+                <a href="{{route('online-payment-system.index')}}" class="side-nav-link ">
                     <i class="fas fa-credit-card"></i>
                     <span>Online Payment System</span>
                 </a>
             </li>
+            @endcan
             @can('profile.index')
             <li class="side-nav-item">
                 <a href="{{route('profile.index')}}" class="side-nav-link ">

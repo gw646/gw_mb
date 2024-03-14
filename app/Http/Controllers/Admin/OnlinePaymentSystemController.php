@@ -8,6 +8,6 @@ class OnlinePaymentSystemController extends Controller
 {
     public function index()
     {
-
+        return view('admin.online-payment-system.index');
     }
 }

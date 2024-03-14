@@ -24,6 +24,9 @@ function getRoleDropdown($selected = 0){
 }
 function getUserRoleName()
 {
+    if (!auth()->check()){
+        return 'Unknown';
+    }
     return auth()->user()->roles[0]->name;
 }
 function adminDateTime($data){

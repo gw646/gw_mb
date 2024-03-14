@@ -277,7 +277,7 @@
                                              class="rounded-circle">
                                     </span>
                                     <span>
-                                        <span class="account-user-name">{{auth()->user()->name}}</span>
+                                        <span class="account-user-name">{{(auth()->check()) ? auth()->user()->name:'Unknown'}}</span>
                                         <span class="account-position">{{getUserRoleName()}}</span>
                                     </span>
                         </a>

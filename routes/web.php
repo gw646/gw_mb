@@ -29,6 +29,15 @@ Route::middleware('auth')->group(function (){
         Route::delete('delete',[UserGroupController::class,'delete'])->name('delete')->middleware('permission:user_groups.delete');
         Route::get('access/{id}',[UserGroupController::class,'access'])->name('access')->middleware('permission:user_groups.access');
         Route::put('access/{id}',[UserGroupController::class,'accessUpdate'])->name('access');
-
     });
+});
+Route::fallback(function () {
+    return abort(404);
+})->middleware('auth');
+Route::get('clear',function (){
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    return 'All caches cleared successfully.';
 });

@@ -56,6 +56,48 @@
                     <span>Sub Committees</span>
                 </a>
             </li>
+            <li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-user-plus"></i>
+                    <span>All Members</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-poll"></i>
+                    <span>Polls and Surveys</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Articles</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Calendar of Events</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-book-medical"></i>
+                    <span>CME Management</span>
+                </a>
+            </li><li class="side-nav-item">
+                <a href="javascript:void(0);" class="side-nav-link ">
+                    <i class="fas fa-cogs"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
         </ul>
         <div class="clearfix"></div>
 

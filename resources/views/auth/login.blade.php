@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header text-center bg-primary">
-            <a href="{{route('lading')}}">
+            <a href="{{route('landing')}}">
                 <span><img src="{{asset('assets/images/mbttlogo.png')}}" alt=""
                            style="border-radius: 50%;max-height: 120px"></span>
                 <h2 style="color: #fff">{{env('APP_NAME')}}</h2>

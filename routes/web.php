@@ -13,13 +13,10 @@ use \App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('lading');
+
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('auth')->group(function (){
+    Route::get('/',[DashboardController::class,'index'] )->name('landing');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 });

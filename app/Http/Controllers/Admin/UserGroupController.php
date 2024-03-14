@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RoleRequest;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class UserGroupController extends Controller
@@ -70,5 +71,22 @@ class UserGroupController extends Controller
     }
     private function extracted(Role $role, Request $request){
         $role->name = $request->name;
+    }
+
+    public function access($id)
+    {
+        $role = Role::where('id',$id)->first();
+        if (empty($role)){
+            toast('Group not found','error');
+            return redirect()->back();
+        }
+        $permissions = Permission::all();
+        $permissionGroups = getAdminPermissionGroupBy();
+        return view('admin.user-group.access')
+            ->with([
+                'role'=>$role,
+                'permissions'=>$permissions,
+                'permissionGroups'=>$permissionGroups
+            ]);
     }
 }

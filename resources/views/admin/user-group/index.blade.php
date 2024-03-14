@@ -37,7 +37,7 @@
                                     <td>{{$role->users_count}}</td>
                                     <td>{{adminDateTime($role->created_at)}}</td>
                                     <td class="table-action">
-                                        <a href="{{route('user-group.access',['id'=>$role->id])}}" class="action-icon"><i class="mdi mdi-eye"></i></a>
+                                        <a href="{{route('user-group.access',['id'=>$role->id])}}" class="action-icon"><i class="mdi mdi-cog"></i></a>
                                         <a href="{{route('user-group.edit',['id'=>$role->id])}}" class="action-icon edit"><i class="mdi mdi-square-edit-outline"></i></a>
                                         @if($role->is_default == '0')
                                             <form id="delete-{{$role->id}}" class="d-none" action="{{route('user-group.delete')}}" method="POST">

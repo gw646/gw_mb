@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function (){
         Route::get('edit/{id}',[UserGroupController::class,'edit'])->name('edit');
         Route::put('update/{id}',[UserGroupController::class,'update'])->name('update');
         Route::delete('delete',[UserGroupController::class,'delete'])->name('delete');
-        Route::get('access/{id}')->name('access');
+        Route::get('access/{id}',[UserGroupController::class,'access'])->name('access');
         Route::post('access/{id}')->name('access');
 
     });

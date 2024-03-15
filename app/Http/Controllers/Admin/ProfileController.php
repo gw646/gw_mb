@@ -9,18 +9,14 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $registrants = User::with('questions')->with('roles')
-            ->whereHas('roles',function ($q){
-                $q->where('name',REGISTRANTS);
-            })->orderBy('created_at')->get();
-
+        $user = User::where('id',auth()->id())->with('questions')->first();
         return view('admin.profile.index')->with([
-            'registrants'=>$registrants
+            'user'=>$user
         ]);
     }
     public function edit($id)
     {
-        $user = User::where('id',$id)->first();
+        $user = User::with('questions')->where('id',$id)->first();
         if (empty($user)){
             toast('User Not found','error');
             return redirect()->back();

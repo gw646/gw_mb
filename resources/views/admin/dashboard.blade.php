@@ -27,7 +27,8 @@
                     <!-- Add more buttons here -->
                 </div>
             </div>
-            <div class="card">
+            @if(getUserRoleName() == ADMIN)
+                <div class="card">
                 <div class="card-header">
                     <h4>New Registrants (Board Membership) </h4>
                 </div>
@@ -63,8 +64,9 @@
                     </table>
                 </div>
             </div>
-
-            <div class="card">
+            @endif
+            @if(getUserRoleName() == ADMIN)
+                <div class="card">
                 <div class="card-header">
                     <h4>New Registrants (Specialists)</h4>
                 </div>
@@ -97,6 +99,7 @@
                     </table>
                 </div>
             </div>
+            @endif
         </div>
         <div class="col-lg-6 col-12">
             <div class="card">

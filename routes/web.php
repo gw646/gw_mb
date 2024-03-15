@@ -15,6 +15,7 @@ use \App\Http\Controllers\Admin\MessageController;
 use \App\Http\Controllers\Admin\CmeManagementController;
 use \App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\PollController;
+Route::post('/payment/redirect', [PaymentController::class, 'redirect'])->name('payment.redirect');
 Route::get('/polls/create', [PollController::class, 'create'])->name('polls.create');
 Route::post('/polls', [PollController::class, 'store'])->name('polls.store');
 

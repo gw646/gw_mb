@@ -104,16 +104,25 @@
                     <h4>Complaints</h4>
                 </div>
                 <div class="card-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <p><strong>User Name:</strong> Lorem ipsum dolor sit amet...</p>
-                            <button class="btn btn-secondary btn-sm">Open</button>
-
-                        </li><li class="list-group-item">
-                            <p><strong>User Name:</strong> Lorem ipsum dolor sit amet...</p>
-                            <button class="btn btn-secondary btn-sm">Open</button>
-                        </li>
-                    </ul>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Complainant Name</th>
+                                <th>Complaint Type</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($forms as $form)
+                                <tr>
+                                    <td>{{$form->complainant_name}}</td>
+                                    <td>{{$form->complaint_type}}</td>
+                                    <td>{{adminDateTime($form->created_at)}}</td>
+                                </tr>
+                            @empty
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="card">

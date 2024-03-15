@@ -27,7 +27,7 @@ use \App\Http\Controllers\Admin\SettingController;
 
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function (){
     Route::get('/',[DashboardController::class,'index'] )->name('landing');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');

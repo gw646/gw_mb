@@ -46,12 +46,41 @@ class RegisterController extends Controller
             $user->assignRole($role);
 
             $question = new UserQuestion();
+            $question->user_id = $user->id;
             $question->suspended = $request->suspended;
-            $question->suspended = $request->suspended;
-            $question->suspended = $request->suspended;
-            $question->suspended = $request->suspended;
-            $question->suspended = $request->suspended;
-            $question->suspended = $request->suspended;
+            $question->effectiveDateSuspended = $request->effectiveDateSuspended;
+            $question->countrySuspended = $request->countrySuspended;
+            $question->stateProvinceSuspended = $request->stateProvinceSuspended;
+            $question->medicalBoardSuspended = $request->medicalBoardSuspended;
+            $question->reasonForActionSuspended = $request->reasonForActionSuspended;
+            $question->denied = $request->denied;
+            $question->noticeDateDenied = $request->noticeDateDenied;
+            $question->countryDenied = $request->countryDenied;
+            $question->stateProvinceDenied = $request->stateProvinceDenied;
+            $question->medicalBoardDenied = $request->medicalBoardDenied;
+            $question->reasonForDenial = $request->reasonForDenial;
+            $question->guilty = $request->guilty;
+            $question->decisionDateGuilty = $request->decisionDateGuilty;
+            $question->countryGuilty = $request->countryGuilty;
+            $question->stateProvinceGuilty = $request->stateProvinceGuilty;
+            $question->medicalBoardGuilty = $request->medicalBoardGuilty;
+            $question->explanationOfGuilty = $request->explanationOfGuilty;
+            $question->investigation = $request->investigation;
+            $question->investigationDate = $request->investigationDate;
+            $question->countryInvestigation = $request->countryInvestigation;
+            $question->stateProvinceInvestigation = $request->stateProvinceInvestigation;
+            $question->medicalBoardInvestigation = $request->medicalBoardInvestigation;
+            $question->explanationInvestigation = $request->explanationInvestigation;
+            $question->review = $request->review;
+            $question->reviewDate = $request->reviewDate;
+            $question->countryReview = $request->countryReview;
+            $question->stateProvinceReview = $request->stateProvinceReview;
+            $question->medicalBoardReview = $request->medicalBoardReview;
+            $question->explanationReview = $request->explanationReview;
+            $question->medicalCouncils1 = $request->medicalCouncils1;
+            $question->medicalCouncils2 = $request->medicalCouncils2;
+            $question->ethics = $request->ethics;
+            $question->save();
 
             \DB::commit();
             return response()->json([

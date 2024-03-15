@@ -49,7 +49,7 @@
                                 <td>
                                     {{$registrant->status}}                                            </td>
                                 <td>
-                                    <a href="{{route('profile.index',['id'=>$registrant->id])}}" class="btn btn-success btn-sm">
+                                    <a href="{{route('profile.edit',['id'=>$registrant->id])}}" class="btn btn-success btn-sm">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </td>

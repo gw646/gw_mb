@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $registrants = User::with('roles')
+        $registrants = User::with('questions')->with('roles')
             ->whereHas('roles',function ($q){
                 $q->where('name',REGISTRANTS);
             })->orderBy('created_at')->get();

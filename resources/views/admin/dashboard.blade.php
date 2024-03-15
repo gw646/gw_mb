@@ -63,26 +63,7 @@
                     </table>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h4>New Registrants ( Provisional & Temporary)</h4>
-                </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-striped table-valign-middle">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
 
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             <div class="card">
                 <div class="card-header">
                     <h4>New Registrants (Specialists)</h4>

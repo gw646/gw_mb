@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -43,6 +44,15 @@ class RegisterController extends Controller
             $user->save();
             $role = Role::firstOrCreate(['name' => REGISTRANTS]);
             $user->assignRole($role);
+
+            $question = new UserQuestion();
+            $question->suspended = $request->suspended;
+            $question->suspended = $request->suspended;
+            $question->suspended = $request->suspended;
+            $question->suspended = $request->suspended;
+            $question->suspended = $request->suspended;
+            $question->suspended = $request->suspended;
+
             \DB::commit();
             return response()->json([
                 'status'=>true,

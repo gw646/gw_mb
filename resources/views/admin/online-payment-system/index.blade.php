@@ -20,9 +20,7 @@
                     <h5 class="card-title">Annual Membership Fee</h5>
                     <p>Please choose your plan and proceed to payment.</p>
 
-                    <form action="{{ route('payment.redirect') }}" method="POST">
-                        @csrf
-
+                   
                         <div class="form-group">
                             <label for="plan">Payment Option</label>
                             <select class="form-control" id="plan" name="plan">
@@ -36,10 +34,12 @@
                             <label for="email">Confirm Email Address</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
                         </div>
+                        </br>
 
-
+                        <a href="https://goldan.xyz/bk/mbtt/public/user/payinvoice" style="text-decoration: none;">
                         <!-- This button might redirect to a bank's hosted payment page or pop up a payment form -->
                         <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+                        </a>
                     </form>
                 </div>
             </div>

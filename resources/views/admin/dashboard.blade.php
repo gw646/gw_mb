@@ -18,7 +18,7 @@
         <div class="col-lg-6 col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Active Members</h3>
+                    <h4>Active Members</h4>
                 </div>
                 <div class="card-body">
                     <p>Active Members: <span class="badge bg-success">3120</span></p>
@@ -29,7 +29,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">New Registrants (Board Membership) </h3>
+                    <h4>New Registrants (Board Membership) </h4>
                 </div>
                 <div class="card-body table-responsive">
                     <table class="table table-striped table-valign-middle">
@@ -63,11 +63,51 @@
                     </table>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>New Registrants ( Provisional & Temporary)</h4>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-striped table-valign-middle">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>New Registrants (Specialists)</h4>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-striped table-valign-middle">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="col-lg-6 col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Complaints</h3>
+                    <h4>Complaints</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
@@ -80,6 +120,38 @@
                             <button class="btn btn-secondary btn-sm">Open</button>
                         </li>
                     </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Outstanding Balances</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Description</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Repeat the following table row for each member with an outstanding balance -->
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Role</td>
+                            <td>Description</td>
+                            <td>email@example.com</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                                <button class="btn btn-danger btn-sm">Remove</button>
+                            </td>
+                        </tr>
+                        <!-- ... (repeat the above table row as necessary) ... -->
+                        </tbody>
+                    </table>
                     <div class="d-flex justify-content-between mt-5 align-items-center mb-2">
                         <h4 class="header-title">Projections Vs Actuals</h4>
                         <div class="dropdown">

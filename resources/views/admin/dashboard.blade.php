@@ -93,8 +93,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Date</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>

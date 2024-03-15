@@ -16,9 +16,10 @@ class RegisterController extends Controller
             'name'=>['required','max:191'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'file'=>['nullable','max:2048'],
+            'file_upload'=>['nullable','max:2048'],
             'registration_expiry'=>['nullable','date'],
             'date_of_first_registration'=>['nullable','date']
+
         ]);
         \DB::beginTransaction();
         try {
@@ -37,8 +38,8 @@ class RegisterController extends Controller
             $user->date_of_first_registration = $request->date_of_first_registration;
             $user->profession = $request->profession;
             $user->registration_status = $request->registration_status;
-            if ($request->file){
-                $user->file = uploadSingleFile($request->file,'attachment');
+            if ($request->file_upload){
+                $user->file = uploadSingleFile($request->file_upload,'attachment');
             }
             $user->save();
             $role = Role::firstOrCreate(['name' => REGISTRANTS]);

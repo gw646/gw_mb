@@ -20,7 +20,9 @@
                     <h5 class="card-title">Annual Membership Fee</h5>
                     <p>Please choose your plan and proceed to payment.</p>
 
-                   
+                    <form action="{{ route('payment.redirect') }}" method="POST">
+                        @csrf
+
                         <div class="form-group">
                             <label for="plan">Payment Option</label>
                             <select class="form-control" id="plan" name="plan">

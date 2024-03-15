@@ -51,10 +51,10 @@ class PermissionSeeder extends Seeder
                 ]
             ],
             [
-                'groupName'=>'Stuff panel',
+                'groupName'=>'Staff panel',
                 'permission'=>[
                     [
-                        'stuff-panel.index',
+                        'staff-panel.index',
                         'Read'
                     ],
                 ]

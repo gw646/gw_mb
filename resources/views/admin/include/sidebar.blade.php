@@ -26,11 +26,11 @@
                     <span> Dashboard </span>
                 </a>
             </li>
-            @can('stuff-panel.index')
+            @can('staff-panel.index')
             <li class="side-nav-item">
-                <a href="{{route('stuff-panel.index')}}" class="side-nav-link ">
+                <a href="{{route('staff-panel.index')}}" class="side-nav-link ">
                     <i class="fas fa-user-cog"></i>
-                    <span> Stuff Panel </span>
+                    <span> Staff Panel </span>
                 </a>
             </li>
             @endcan

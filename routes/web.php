@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\DashboardController;
 use \App\Http\Controllers\Admin\UserGroupController;
 use \App\Http\Controllers\Admin\ProfileController;
-use \App\Http\Controllers\Admin\StuffPanelController;
+use \App\Http\Controllers\Admin\StaffPanelController;
 use \App\Http\Controllers\Admin\OnlinePaymentSystemController;
 use \App\Http\Controllers\Admin\SubCommitteesController;
 use \App\Http\Controllers\Admin\AllMembersController;
@@ -31,8 +31,8 @@ Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function (){
     Route::get('/',[DashboardController::class,'index'] )->name('landing');
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::prefix('stuff-panel')->name('stuff-panel.')->group(function (){
-        Route::get('/',[StuffPanelController::class,'index'])->name('index')->middleware('permission:stuff-panel.index');
+    Route::prefix('staff-panel')->name('staff-panel.')->group(function (){
+        Route::get('/',[StaffPanelController::class,'index'])->name('index')->middleware('permission:staff-panel.index');
     });
     Route::prefix('user-group')->name('user-group.')->group(function (){
         Route::get('/',[UserGroupController::class,'index'])->name('index')->middleware('permission:user_groups.index');

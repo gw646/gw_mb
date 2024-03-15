@@ -98,14 +98,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @forelse($registrants as $registrant)
+                        @forelse($specialists as $data)
                             <tr>
-                                <td>{{$registrant->name}}</td>
-                                <td>{{adminDateTime($registrant->created_at)}}</td>
+                                <td>{{$data->name}}</td>
+                                <td>{{adminDateTime($data->created_at)}}</td>
                                 <td>
-                                    {{$registrant->status}}                                            </td>
+                                    {{$data->status}}                                            </td>
                                 <td>
-                                    <a href="{{route('profile.index',['id'=>$registrant->id])}}" class="btn btn-success btn-sm">
+                                    <a href="{{route('profile.index',['id'=>$data->id])}}" class="btn btn-success btn-sm">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </td>

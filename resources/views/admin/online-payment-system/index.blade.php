@@ -17,8 +17,8 @@
             
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Subscribe to Our Service</h5>
-                    <p>Please choose your subscription plan and proceed to payment.</p>
+                    <h5 class="card-title">Annual Membership Fee</h5>
+                    <p>Please choose your plan and proceed to payment.</p>
 
                     <form action="{{ route('payment.redirect') }}" method="POST">
                         @csrf
@@ -26,18 +26,16 @@
                         <div class="form-group">
                             <label for="plan">Subscription Plan</label>
                             <select class="form-control" id="plan" name="plan">
-                                <option value="monthly">Monthly - $10</option>
-                                <option value="yearly">Yearly - $100</option>
-                                <!-- Add more plans as needed -->
+                                <option value="monthly">Monthly - $100</option>
+                                <option value="yearly">Yearly - $1200</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Address</label>
+                            <label for="email">Confirm Email Address</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
                         </div>
 
-                        <!-- Any other information you want to collect, like billing address, etc. -->
 
                         <!-- This button might redirect to a bank's hosted payment page or pop up a payment form -->
                         <button type="submit" class="btn btn-primary">Proceed to Payment</button>

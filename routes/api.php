@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('registration-board-membership',[\App\Http\Controllers\Api\RegisterController::class,'registrationBoardMembership']);
 Route::post('specialist-registration',[\App\Http\Controllers\Api\RegisterController::class,'specialistRegistration']);
+Route::post('complaint-form',[\App\Http\Controllers\Api\RegisterController::class,'complaintForm']);

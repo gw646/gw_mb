@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\ComplaintForm;
 use App\Models\User;
 use App\Models\UserQuestion;
 use Illuminate\Http\Request;
@@ -141,5 +142,33 @@ class RegisterController extends Controller
                 'msg'=>$exception->getMessage()
             ]);
         }
+    }
+
+    public function complaintForm(Request  $request)
+    {
+        $this->validate($request,[
+            'incident_date'=>['nullable','date','date_format:Y-m-d'],
+            'time'=>['nullable','date_format:H:i'],
+            'documents'=>['nullable','max:2048'],
+        ]);
+        $form = new ComplaintForm();
+        $form->complainant_name = $request->complainant_name;
+        $form->complainant_address = $request->complainant_address;
+        $form->complainant_phone = $request->complainant_phone;
+        $form->practitioner_name = $request->practitioner_name;
+        $form->practitioner_address = $request->practitioner_address;
+        $form->practitioner_phone = $request->practitioner_phone;
+        $form->complaint_type = $request->complaint_type;
+        $form->incident_details = $request->incident_details;
+        $form->incident_date = $request->incident_date;
+        $form->time = $request->time;
+        if ($request->documents){
+            $form->documents = $request->documents;
+        }
+        $form->save();
+        return response()->json([
+            'status'=>true,
+            'msg'=>'Complaint send successfully'
+        ]);
     }
 }

@@ -18,31 +18,66 @@
         <button type="button" style="margin-bottom: 20px; background-color: #007bff; color: white; padding: 10px 24px; border: none; border-radius: 4px; cursor: pointer;">Create Committee</button>
         <div style="overflow-x:auto;">
             <h2>All Committees & Members </h2>
-            <table style="width:100%; border-collapse: collapse; margin-top: 20px;">
-                <thead>
-                    <tr>
-                        <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Committee Name</th>
-                        <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Members</th>
-                        <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Place of Practice</th>
-                        <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Profession</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="border: 1px solid black; padding: 8px;">Health and Safety</td>
-                        <td style="border: 1px solid black; padding: 8px;">John Doe</td>
-                        <td style="border: 1px solid black; padding: 8px;">Trinidad</td>
-                        <td style="border: 1px solid black; padding: 8px;">Doctor</td>
-                    </tr>
-                    <tr>
-                        <td style="border: 1px solid black; padding: 8px;">Finance</td>
-                        <td style="border: 1px solid black; padding: 8px;">James Smith</td>
-                        <td style="border: 1px solid black; padding: 8px;">Los Angeles</td>
-                        <td style="border: 1px solid black; padding: 8px;">Doctor</td>
-                    </tr>
-                    <!-- Add more rows as needed -->
-                </tbody>
-            </table>
+            <table class="table table-centered mb-0">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Date of Birth</th>
+            <th>Active?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Risa D. Pearson</td>
+            <td>336-508-2157</td>
+            <td>July 24, 1950</td>
+            <td>
+                <!-- Switch-->
+                <div>
+                    <input type="checkbox" id="switch01" checked data-switch="success"/>
+                    <label for="switch01" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Ann C. Thompson</td>
+            <td>646-473-2057</td>
+            <td>January 25, 1959</td>
+            <td>
+                <!-- Switch-->
+                <div>
+                    <input type="checkbox" id="switch02" checked data-switch="success"/>
+                    <label for="switch02" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Paul J. Friend</td>
+            <td>281-308-0793</td>
+            <td>September 1, 1939</td>
+            <td>
+                <!-- Switch-->
+                <div>
+                    <input type="checkbox" id="switch03" data-switch="success"/>
+                    <label for="switch03" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Linda G. Smith</td>
+            <td>606-253-1207</td>
+            <td>May 3, 1962</td>
+            <td>
+                <!-- Switch-->
+                <div>
+                    <input type="checkbox" id="switch04" data-switch="success"/>
+                    <label for="switch04" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
         </div>
     </div>
 </div>

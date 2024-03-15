@@ -57,8 +57,13 @@
                 <div class="card-body">
                     <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
                         <li class="nav-item">
-                            <a href="#general" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
+                            <a href="#general" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0 ">
                                 General
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#questions" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
+                                Questions
                             </a>
                         </li>
                         <li class="nav-item">
@@ -93,7 +98,7 @@
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="general">
+                        <div class="tab-pane " id="general">
                             <form>
                                 <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Personal Info</h5>
                                 <div class="row">
@@ -174,6 +179,49 @@
 
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-success mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane active" id="questions">
+                            <form>
+                                <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Questions</h5>
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <lable>1. Have you ever been suspended, restricted or revoked of your licensure, registration, permit or any other authority to practice medicine in another jurisdiction?</lable>
+                                        <div class="mt-2 mb-3">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="suspendedYes" name="suspended" value="Yes" class="form-check-input" {{@$user->questions->suspended == 'Yes' ? 'checked':''}}>
+                                                <label class="form-check-label" for="suspendedYes">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="suspendedNo" name="suspended" value="NO" class="form-check-input" {{@$user->questions->suspended != 'Yes' ? 'checked':''}}>
+                                                <label class="form-check-label" for="suspendedNo">No</label>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="suspendedDetails">
+                                            <div class="col-lg-6 col-12 mb-3">
+                                                <label for="">Effective Date of Disciplinary Action:</label>
+                                                <input class="form-control" type="date" name="effectiveDateSuspended">
+                                            </div>
+                                            <div class="col-lg-6 col-12 mb-3">
+                                                <label for="">Country:</label>
+                                                <input class="form-control" type="date" name="countrySuspended">
+                                            </div>
+                                            <div class="col-lg-6 col-12 mb-3">
+                                                <label for="">State/Province:</label>
+                                                <input class="form-control" type="text" name="stateProvinceSuspended">
+                                            </div>
+                                            <div class="col-lg-6 col-12 mb-3">
+                                                <label for="">Name of Medical Board/Council:</label>
+                                                <input class="form-control" type="text" name="medicalBoardSuspended">
+                                            </div>
+                                            <div class="col-lg-12 col-12 mb-3">
+                                                <label for="">Reason for suspension/revocation/restriction of license/registration/permit:</label>
+                                                <input class="form-control" type="text" name="reasonForActionSuspended">
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </form>
                         </div>

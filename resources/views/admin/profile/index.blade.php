@@ -17,6 +17,10 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                <div class="card-header">
+                    <h4>New Registrants (Board Membership)
+                    </h4>
+                </div>
                 <div class="card-body">
                     <table class="table table-striped table-valign-middle">
                         <thead>

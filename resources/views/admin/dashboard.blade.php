@@ -105,7 +105,7 @@
                                 <td>
                                     {{$data->status}}                                            </td>
                                 <td>
-                                    <a href="{{route('profile.index',['id'=>$data->id])}}" class="btn btn-success btn-sm">
+                                    <a href="{{route('profile.edit',['id'=>$data->id])}}" class="btn btn-success btn-sm">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </td>

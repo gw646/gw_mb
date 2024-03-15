@@ -42,8 +42,16 @@ class RegisterController extends Controller
             $role = Role::firstOrCreate(['name' => REGISTRANTS]);
             $user->assignRole($role);
             \DB::commit();
+            return response()->json([
+                'status'=>true,
+                'msg'=>'User Create successful'
+            ]);
         }catch (\Exception $exception){
             \DB::rollBack();
+            return response()->json([
+                'status'=>false,
+                'msg'=>$exception->getMessage()
+            ]);
         }
     }
 }

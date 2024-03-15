@@ -9,11 +9,13 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $specialists = User::with('roles')->whereHas('roles',function ($q){
-            $q->where('name',SPECIALIST);
-        })->orderByDesc('created_at')->get();
+        $registrants = User::with('questions')->with('roles')
+            ->whereHas('roles',function ($q){
+                $q->where('name',REGISTRANTS);
+            })->orderBy('created_at')->get();
+
         return view('admin.profile.index')->with([
-            'specialists'=>$specialists
+            'registrants'=>$registrants
         ]);
     }
     public function edit($id)
@@ -23,7 +25,7 @@ class ProfileController extends Controller
             toast('User Not found','error');
             return redirect()->back();
         }
-        return view('admin.profile.index')->with([
+        return view('admin.profile.edit')->with([
             'user'=>$user
         ]);
     }

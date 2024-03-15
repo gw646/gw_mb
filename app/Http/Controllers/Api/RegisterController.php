@@ -37,7 +37,9 @@ class RegisterController extends Controller
             $user->date_of_first_registration = $request->date_of_first_registration;
             $user->profession = $request->profession;
             $user->registration_status = $request->registration_status;
-            $user->file = $request->file;
+            if ($request->file){
+                $user->file = uploadSingleFile($request->file,'attachment');
+            }
             $user->save();
             $role = Role::firstOrCreate(['name' => REGISTRANTS]);
             $user->assignRole($role);

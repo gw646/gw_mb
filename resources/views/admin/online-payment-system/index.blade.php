@@ -20,16 +20,15 @@
                     <h5 class="card-title">Annual Membership Fee</h5>
                     <p>Please choose your plan and proceed to payment.</p>
 
-                    <form action="{{ route('payment.redirect') }}" method="POST">
-                        @csrf
-
+                   
                         <div class="form-group">
-                            <label for="plan">Subscription Plan</label>
+                            <label for="plan">Payment Option</label>
                             <select class="form-control" id="plan" name="plan">
                                 <option value="monthly">Monthly - $100</option>
                                 <option value="yearly">Yearly - $1200</option>
                             </select>
                         </div>
+                        </br>
 
                         <div class="form-group">
                             <label for="email">Confirm Email Address</label>

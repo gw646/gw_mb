@@ -158,6 +158,18 @@
                                             <input type="date" class="form-control" name="date_of_first_registration" id="date_of_first_registration" value="{{$user->date_of_first_registration}}">
                                         </div>
                                     </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="profession" class="form-label">Profession</label>
+                                            <input type="text" class="form-control" name="profession" value="{{$user->profession}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="registration_status" class="form-label">Registration Status</label>
+                                            <input type="text" class="form-control" name="registration_status" value="{{$user->registration_status}}">
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="text-end">

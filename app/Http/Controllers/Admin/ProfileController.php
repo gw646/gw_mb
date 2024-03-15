@@ -16,7 +16,7 @@ class ProfileController extends Controller
             'specialists'=>$specialists
         ]);
     }
-    public function indexx($id)
+    public function edit($id)
     {
         $user = User::where('id',$id)->first();
         if (empty($user)){

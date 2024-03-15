@@ -50,7 +50,7 @@ Route::middleware('auth')->group(function (){
 
     Route::prefix('profile')->name('profile.')->group(function (){
         Route::get('/',[ProfileController::class,'index'])->name('index')->middleware('permission:profile.index');
-        Route::get('edit/{id}',[ProfileController::class,'index'])->name('edit');
+        Route::get('edit/{id}',[ProfileController::class,'edit'])->name('edit');
     });
     Route::prefix('sub-committees')->name('sub-committees.')->group(function (){
         Route::get('/',[SubCommitteesController::class,'index'])->name('index')->middleware('permission:sub-committees.index');

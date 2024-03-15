@@ -25,8 +25,6 @@ use \App\Http\Controllers\Admin\SettingController;
 |
 */
 
-
-
 Auth::routes(['register' => false]);
 Route::middleware('auth')->group(function (){
     Route::get('/',[DashboardController::class,'index'] )->name('landing');

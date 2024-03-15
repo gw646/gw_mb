@@ -45,7 +45,9 @@
                                             <a href="{{route('user-group.access',['id'=>$role->id])}}" class="action-icon"><i class="mdi mdi-cog"></i></a>
                                         @endcan
                                         @can('user_groups.update')
-                                            <a href="{{route('user-group.edit',['id'=>$role->id])}}" class="action-icon edit"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            @if($role->is_default == '0')
+                                                <a href="{{route('user-group.edit',['id'=>$role->id])}}" class="action-icon edit"><i class="mdi mdi-square-edit-outline"></i></a>
+                                            @endif
                                         @endcan
                                         @can('user_groups.delete')
                                             @if($role->is_default == '0')

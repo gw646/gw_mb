@@ -92,7 +92,7 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Date</th>
+                            <th>Email</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -101,13 +101,10 @@
                         @forelse($specialists as $data)
                             <tr>
                                 <td>{{$data->name}}</td>
+                                <td>{{$data->email}}</td>
                                 <td>{{adminDateTime($data->created_at)}}</td>
                                 <td>
-                                    {{$data->status}}                                            </td>
-                                <td>
-                                    <a href="{{route('profile.edit',['id'=>$data->id])}}" class="btn btn-success btn-sm">
-                                        <i class="fa fa-eye"></i>
-                                    </a>
+                                    {{$data->status}}
                                 </td>
                             </tr>
                         @empty

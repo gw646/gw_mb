@@ -88,7 +88,7 @@ class RegisterController extends Controller
                 $user->file = uploadSingleFile($request->file_upload,'attachment');
             }
             $user->save();
-            $role = Role::firstOrCreate(['name' => SPECIALISTANDHIGHERQUALIFICATIONS]);
+            $role = Role::firstOrCreate(['name' => SPECIALIST]);
             $user->assignRole($role);
             \DB::commit();
             return response()->json([

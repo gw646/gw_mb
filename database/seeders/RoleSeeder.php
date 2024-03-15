@@ -11,6 +11,6 @@ class RoleSeeder extends Seeder
     {
         Role::firstOrCreate(['name' => ADMIN,'is_default' => 1]);
         Role::firstOrCreate(['name' => REGISTRANTS,'is_default' => 1]);
-        Role::firstOrCreate(['name' => SPECIALISTANDHIGHERQUALIFICATIONS,'is_default' => 1]);
+        Role::firstOrCreate(['name' => SPECIALIST,'is_default' => 1]);
     }
 }

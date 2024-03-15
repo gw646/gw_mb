@@ -29,9 +29,10 @@ class CreateUsersTable extends Migration
             $table->date('registration_expiry')->nullable();
             $table->date('date_of_first_registration')->nullable();
             $table->string('profession')->nullable();
+            $table->string('specialist')->nullable();
             $table->string('registration_status')->nullable();
             $table->string('file')->nullable();
-            $table->enum('status',['Active','Inactive','Suspended'])->default('Active');
+            $table->enum('status',['Active','Inactive','Suspended','Pending'])->default('Active');
             $table->rememberToken();
             $table->timestamps();
         });

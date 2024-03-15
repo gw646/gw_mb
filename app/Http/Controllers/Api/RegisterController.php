@@ -19,7 +19,6 @@ class RegisterController extends Controller
             'file_upload'=>['nullable','max:2048'],
             'registration_expiry'=>['nullable','date'],
             'date_of_first_registration'=>['nullable','date']
-
         ]);
         \DB::beginTransaction();
         try {
@@ -30,7 +29,7 @@ class RegisterController extends Controller
             $user->status = 'Active';
             $user->location = $request->location;
             $user->bio = $request->bio;
-            $user->languages = $request->languages;
+            $user->languages = $request->language;
             $user->principal_place_of_practice = $request->principal_place_of_practice;
             $user->qualifications = $request->qualifications;
             $user->registration_number = $request->registration_number;
@@ -43,6 +42,53 @@ class RegisterController extends Controller
             }
             $user->save();
             $role = Role::firstOrCreate(['name' => REGISTRANTS]);
+            $user->assignRole($role);
+            \DB::commit();
+            return response()->json([
+                'status'=>true,
+                'msg'=>'User Create successful'
+            ]);
+        }catch (\Exception $exception){
+            \DB::rollBack();
+            return response()->json([
+                'status'=>false,
+                'msg'=>$exception->getMessage()
+            ]);
+        }
+    }
+
+    public function specialistRegistration(Request $request)
+    {
+        $this->validate($request,[
+            'name'=>['required','max:191'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+            'file_upload'=>['nullable','max:2048'],
+            'registration_expiry'=>['nullable','date'],
+            'date_of_first_registration'=>['nullable','date']
+        ]);
+        \DB::beginTransaction();
+        try {
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->status = 'Pending';
+            $user->location = $request->location;
+            $user->bio = $request->bio;
+            $user->languages = $request->language;
+            $user->principal_place_of_practice = $request->principal_place_of_practice;
+            $user->qualifications = $request->qualifications;
+            $user->registration_number = $request->registration_number;
+            $user->registration_expiry = $request->registration_expiry;
+            $user->date_of_first_registration = $request->date_of_first_registration;
+            $user->specialist = $request->specialist;
+            $user->registration_status = $request->registration_status;
+            if ($request->file_upload){
+                $user->file = uploadSingleFile($request->file_upload,'attachment');
+            }
+            $user->save();
+            $role = Role::firstOrCreate(['name' => SPECIALISTANDHIGHERQUALIFICATIONS]);
             $user->assignRole($role);
             \DB::commit();
             return response()->json([

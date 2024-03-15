@@ -9,13 +9,9 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $registrants = User::with('questions')->with('roles')
-            ->whereHas('roles',function ($q){
-                $q->where('name',REGISTRANTS);
-            })->orderBy('created_at')->get();
-
+        $user = \Auth::user();
         return view('admin.profile.index')->with([
-            'registrants'=>$registrants
+            'user'=>$user
         ]);
     }
     public function edit($id)

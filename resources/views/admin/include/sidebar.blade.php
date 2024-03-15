@@ -52,7 +52,7 @@
             @endcan
             @can('profile.index')
             <li class="side-nav-item">
-                <a href="{{route('profile.index')}}" class="side-nav-link ">
+                <a href="{{route('profile.index',['id'=>auth()->id()])}}" class="side-nav-link ">
                     <i class="fas fa-id-card"></i>
                     <span>User Profiles</span>
                 </a>

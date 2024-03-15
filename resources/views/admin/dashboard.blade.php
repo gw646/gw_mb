@@ -49,7 +49,7 @@
                                 <td>
                                     {{$registrant->status}}                                            </td>
                                 <td>
-                                    <a href="https://goldan.xyz/bk/mbtt/public/user/member/16" class="btn btn-success btn-sm">
+                                    <a href="{{route('profile.index',['id'=>$registrant->id])}}" class="btn btn-success btn-sm">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </td>

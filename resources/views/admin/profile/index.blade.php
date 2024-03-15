@@ -19,8 +19,8 @@
             <div class="card text-center">
                 <div class="card-body">
                     <img src="{{asset('assets/images/users/avatar-1.jpg')}}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
-                    <h4 class="mb-0 mt-2">{{auth()->user()->name}}</h4>
-                    <p class="text-muted font-14">{{getUserRoleName()}}</p>
+                    <h4 class="mb-0 mt-2">{{$user->name}}</h4>
+                    <p class="text-muted font-14">{{getUserRoleNameByUserId($user->id)}}</p>
                 </div>
             </div>
             <div class="card">
@@ -99,71 +99,63 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Username</label>
-                                            <input type="text" class="form-control" id="username" placeholder="Enter username">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="mb-3">
                                             <label for="name" class="form-label">Name</label>
-                                            <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                                            <input value="{{$user->name}}" type="text" class="form-control" id="name" placeholder="Enter Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                                            <input value="{{$user->email}}" type="email" class="form-control" id="email" placeholder="Enter Email">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Gender</label>
-                                            <select class="form-select" name="" id="">
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                            </select>
+                                            <label for="location" class="form-label">Location</label>
+                                            <input type="text" class="form-control" id="location" value="{{$user->location}}" placeholder="Enter Location">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Language</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter language">
+                                            <input type="email" class="form-control" id="email" placeholder="Enter language" value="{{$user->languages}}">
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">Place of Primary Practice</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter Place of Primary Practice">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
+
+                                    <div class="col-md-6 col-1">
                                         <div class="mb-3">
                                             <label for="userbio" class="form-label">Bio</label>
-                                            <textarea class="form-control" id="userbio" rows="4" placeholder="Write something..."></textarea>
+                                            <textarea class="form-control" id="userbio" rows="4" placeholder="Write something...">{{$user->bio}}</textarea>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-md-6 col-1">
                                         <div class="mb-3">
                                             <label for="userbio" class="form-label">Qualifications</label>
-                                            <textarea class="form-control" id="userbio" rows="4" placeholder="Write something..."></textarea>
+                                            <textarea class="form-control" id="userbio" rows="4" placeholder="Write something...">{{$user->qualifications}}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Registration Number</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter Registration Number">
+                                            <label for="principal_place_of_practice" class="form-label">Principal Place of Practice</label>
+                                            <input value="{{$user->principal_place_of_practice}}" type="text" class="form-control" name="principal_place_of_practice" id="principal_place_of_practice" >
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Registration Expiry</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter Registration Expiry">
+                                            <label for="registration_number" class="form-label">Registration Number</label>
+                                            <input type="text" name="registration_number" class="form-control" id="registration_number" value="{{$user->registration_number}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Registration Date</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Enter Registration Date">
+                                            <label for="registration_expiry" class="form-label">Registration Expiry</label>
+                                            <input type="date" class="form-control" id="registration_expiry" value="{{$user->registration_expiry}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="mb-3">
+                                            <label for="date_of_first_registration" class="form-label">Date of First Registration</label>
+                                            <input type="date" class="form-control" name="date_of_first_registration" id="date_of_first_registration" value="{{$user->date_of_first_registration}}">
                                         </div>
                                     </div>
                                 </div>

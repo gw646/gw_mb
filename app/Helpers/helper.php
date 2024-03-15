@@ -29,6 +29,17 @@ function getUserRoleName()
     }
     return auth()->user()->roles[0]->name;
 }
+function getUserRoleNameByUserId($id = 0)
+{
+    if (empty($id)){
+        return false;
+    }
+    $user = \App\Models\User::where('id',$id)->first();
+    if (empty($user)){
+        return false;
+    }
+    return $user->roles[0]->name;
+}
 function adminDateTime($data){
     return Carbon::parse($data)->format('d-m-Y h:i:s');
 }

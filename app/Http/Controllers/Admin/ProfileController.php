@@ -7,7 +7,16 @@ use App\Models\User;
 
 class ProfileController extends Controller
 {
-    public function index($id)
+    public function index()
+    {
+        $specialists = User::with('roles')->whereHas('roles',function ($q){
+            $q->where('name',SPECIALIST);
+        })->orderByDesc('created_at')->get();
+        return view('admin.profile.index')->with([
+            'specialists'=>$specialists
+        ]);
+    }
+    public function indexx($id)
     {
         $user = User::where('id',$id)->first();
         if (empty($user)){

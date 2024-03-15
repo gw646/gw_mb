@@ -47,7 +47,7 @@ class PermissionSeeder extends Seeder
                     [
                         'profile.index',
                         'Read'
-                    ],
+                    ]
                 ]
             ],
             [

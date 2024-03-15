@@ -13,10 +13,13 @@ class DashboardController extends Controller
             ->whereHas('roles',function ($q){
                 $q->where('name',REGISTRANTS);
             })->orderBy('created_at')->get();
-
+        $specialists = User::with('roles')->whereHas('roles',function ($q){
+            $q->where('name',SPECIALIST);
+        })->orderByDesc('created_at')->get();
         return view('admin.dashboard')
             ->with([
-                'registrants'=>$registrants
+                'registrants'=>$registrants,
+                'specialists'=>$specialists
             ]);
     }
 }

@@ -17,21 +17,21 @@
       
         <button type="button" style="margin-bottom: 20px; background-color: #007bff; color: white; padding: 10px 24px; border: none; border-radius: 4px; cursor: pointer;">Create Committee</button>
         <div style="overflow-x:auto;">
-            <h2>All Committees & Members </h2>
+            <h2>All Committees </h2>
             <table class="table table-centered mb-0">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Date of Birth</th>
+            <th>Committee Name</th>
+            <th>Members</th>
+            <th>Purpose</th>
             <th>Active?</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Risa D. Pearson</td>
-            <td>336-508-2157</td>
-            <td>July 24, 1950</td>
+            <td>Committee 1</td>
+            <td>10</td>
+            <td>Planning</td>
             <td>
                 <!-- Switch-->
                 <div>
@@ -41,9 +41,9 @@
             </td>
         </tr>
         <tr>
-            <td>Ann C. Thompson</td>
-            <td>646-473-2057</td>
-            <td>January 25, 1959</td>
+            <td>Committee 2</td>
+            <td>3</td>
+            <td>Board Meetings</td>
             <td>
                 <!-- Switch-->
                 <div>
@@ -52,30 +52,7 @@
                 </div>
             </td>
         </tr>
-        <tr>
-            <td>Paul J. Friend</td>
-            <td>281-308-0793</td>
-            <td>September 1, 1939</td>
-            <td>
-                <!-- Switch-->
-                <div>
-                    <input type="checkbox" id="switch03" data-switch="success"/>
-                    <label for="switch03" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Linda G. Smith</td>
-            <td>606-253-1207</td>
-            <td>May 3, 1962</td>
-            <td>
-                <!-- Switch-->
-                <div>
-                    <input type="checkbox" id="switch04" data-switch="success"/>
-                    <label for="switch04" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
-                </div>
-            </td>
-        </tr>
+        
     </tbody>
 </table>
         </div>

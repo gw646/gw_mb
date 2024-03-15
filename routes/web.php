@@ -18,6 +18,11 @@ use App\Http\Controllers\PollController;
 Route::post('/payment/redirect', [PaymentController::class, 'redirect'])->name('payment.redirect');
 Route::get('/polls/create', [PollController::class, 'create'])->name('polls.create');
 Route::post('/polls', [PollController::class, 'store'])->name('polls.store');
+use App\Http\Controllers\CmeController;
+
+// Assuming you have a controller named 'CmeController' with a method 'store'
+Route::post('/cme', [CmeController::class, 'store'])->name('cme.store');
+
 
 
 /*
